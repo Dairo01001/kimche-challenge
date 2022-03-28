@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import style from './Card.module.scss';
+
 export default function Card({ name, emoji, code }) {
   return (
-    <div>
+    <div className={style.card}>
       <div>
         <h2>{emoji}</h2>
         <h3>{name}</h3>
