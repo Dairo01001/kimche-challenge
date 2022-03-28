@@ -14,6 +14,7 @@ const GET_ALL_COUNTRIES = gql`
       code
       native
       currency
+      capital
       phone
       languages {
         name
@@ -45,8 +46,15 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1>Country Search</h1>
+      <h1 style={{ fontSize: '3rem' }}>Country Search</h1>
       <input
+        style={{
+          margin: '10px',
+          fontSize: '2rem',
+          padding: '10px',
+          width: '70%',
+          borderRadius: '5px',
+        }}
         type="text"
         placeholder="country"
         value={input}

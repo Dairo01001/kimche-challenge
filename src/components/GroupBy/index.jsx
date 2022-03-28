@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 import Cards from '../Cards';
+import style from './GroupBy.module.scss';
 
 export default function GroupBy({ countries }) {
   const [groupBy, setGroupBy] = React.useState('continent');
@@ -22,12 +23,20 @@ export default function GroupBy({ countries }) {
 
   return (
     <div>
-      <div>
+      <div className={style.container}>
         <p>Group By: </p>
-        <button type="button" onClick={() => setGroupBy('continent')}>
+        <button
+          className={groupBy === 'continent' ? 'isSelect' : ''}
+          type="button"
+          onClick={() => setGroupBy('continent')}
+        >
           Continent
         </button>
-        <button type="button" onClick={() => setGroupBy('language')}>
+        <button
+          className={groupBy === 'language' ? 'isSelect' : ''}
+          type="button"
+          onClick={() => setGroupBy('language')}
+        >
           Language
         </button>
       </div>
