@@ -3,6 +3,7 @@ import { gql, useQuery } from '@apollo/client';
 import _ from 'lodash';
 
 import GroupBy from './components/GroupBy';
+import Loading from './components/Loading';
 
 const GET_ALL_COUNTRIES = gql`
   query {
@@ -32,7 +33,7 @@ export default function App() {
   const [input, setInput] = useState('');
 
   if (result.loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   const isCountry = (country, countryName) => country.name.toLowerCase().includes(countryName);
@@ -41,7 +42,9 @@ export default function App() {
     const { countries } = result.data;
     const countryName = e.target.value.toLowerCase();
     setInput(countryName);
-    setSearchCountries(_.filter(countries, (country) => isCountry(country, countryName)));
+    setSearchCountries(
+      _.filter(countries, (country) => isCountry(country, countryName)),
+    );
   };
 
   return (
@@ -56,7 +59,7 @@ export default function App() {
           borderRadius: '5px',
         }}
         type="text"
-        placeholder="country"
+        placeholder="Search for a country"
         value={input}
         onChange={handleChange}
       />
