@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+
+    p {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 2rem;
+    }
+}
