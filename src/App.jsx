@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
+import _ from 'lodash';
+
+import GroupBy from './components/GroupBy';
 
 const GET_ALL_COUNTRIES = gql`
   query {
@@ -23,17 +26,33 @@ const GET_ALL_COUNTRIES = gql`
 `;
 
 export default function App() {
-  const countries = useQuery(GET_ALL_COUNTRIES);
+  const result = useQuery(GET_ALL_COUNTRIES);
+  const [searchCountries, setSearchCountries] = useState([]);
+  const [input, setInput] = useState('');
 
-  if (countries.loading) {
+  if (result.loading) {
     return <div>Loading...</div>;
   }
 
-  console.log(countries.data);
+  const isCountry = (country, countryName) => country.name.toLowerCase().includes(countryName);
+
+  const handleChange = (e) => {
+    const { countries } = result.data;
+    const countryName = e.target.value.toLowerCase();
+    setInput(countryName);
+    setSearchCountries(_.filter(countries, (country) => isCountry(country, countryName)));
+  };
 
   return (
     <div>
-      <h1>Hello World!</h1>
+      <h1>Country Search</h1>
+      <input
+        type="text"
+        placeholder="country"
+        value={input}
+        onChange={handleChange}
+      />
+      <GroupBy countries={searchCountries} />
     </div>
   );
 }
