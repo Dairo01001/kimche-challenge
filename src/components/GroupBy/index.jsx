@@ -9,7 +9,15 @@ export default function GroupBy({ countries }) {
   const [groupBy, setGroupBy] = React.useState('continent');
 
   if (countries.length === 0) {
-    return <div>Country not found</div>;
+    return (
+      <div className="info">
+        Country not found!
+        {' '}
+        <span role="img" aria-label="Rocket">
+          🙃
+        </span>
+      </div>
+    );
   }
 
   const languages = (country) => {

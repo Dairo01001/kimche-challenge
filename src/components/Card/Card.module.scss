@@ -4,24 +4,17 @@
   border-radius: 2px;
   width: 300px;
   margin: 10px;
-}
-
-.card {
-  header {
-    display: flex;
-    flex-direction: row;
-    margin: 5px;
-
-    h2 {
-      margin-right: 5px;
-    }
-  }
+  padding: 5px;
 
   div {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 5px;
+  }
+
+  h3 {
+    font-size: 1.9rem;
+    text-align: center;
   }
 }
 

@@ -41,7 +41,7 @@ export default function App() {
   const handleChange = (e) => {
     const { countries } = result.data;
     const countryName = e.target.value.toLowerCase();
-    setInput(countryName);
+    setInput(e.target.value);
     setSearchCountries(
       _.filter(countries, (country) => isCountry(country, countryName)),
     );
@@ -49,14 +49,14 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1 style={{ fontSize: '3rem' }}>Country Search</h1>
+      <h1 style={{ fontSize: '3.5rem' }}>Country Search</h1>
       <input
+        className="input"
         style={{
           margin: '10px',
           fontSize: '2rem',
           padding: '10px',
           width: '70%',
-          borderRadius: '5px',
         }}
         type="text"
         placeholder="Search for a country"
@@ -66,7 +66,13 @@ export default function App() {
       {searchCountries ? (
         <GroupBy countries={searchCountries} />
       ) : (
-        <p>Write something to start!</p>
+        <div className="info">
+          Write something to start!
+          {' '}
+          <span role="img" aria-label="Rocket">
+            🚀
+          </span>
+        </div>
       )}
     </div>
   );

@@ -3,13 +3,9 @@
     margin: 10px;
     padding: 5px;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     p {
-        font-size: 2rem;
-    }
-
-    button {
         font-size: 2rem;
     }
 }
