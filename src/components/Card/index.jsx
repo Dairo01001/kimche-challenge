@@ -8,34 +8,34 @@ export default function Card({
 }) {
   return (
     <div className={style.card}>
-      <header>
-        <h2>{emoji}</h2>
-        <h3>{name}</h3>
-      </header>
-      <div>
-        <h4>
-          <strong>Capital: </strong>
-          {' '}
-          {capital}
-        </h4>
-      </div>
-      <div>
-        <span>
-          <strong>Code:</strong>
-          {' '}
-          {code}
-        </span>
-        <span>
-          <strong>Phone:</strong>
-          {' '}
-          +
-          {phone}
-        </span>
-        <span>
-          <strong>Currency:</strong>
-          {' '}
-          {currency}
-        </span>
+      <h3>{name}</h3>
+
+      <p style={{ paddingLeft: 15 }}>
+        <strong>Capital: </strong>
+        {' '}
+        {capital || 'N/A'}
+      </p>
+
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <p style={{ fontSize: 100 }}>{emoji}</p>
+        <div>
+          <span>
+            <strong>Code:</strong>
+            {' '}
+            {code}
+          </span>
+          <span>
+            <strong>Phone:</strong>
+            {' '}
+            +
+            {phone}
+          </span>
+          <span>
+            <strong>Currency:</strong>
+            {' '}
+            {currency || 'N/A'}
+          </span>
+        </div>
       </div>
     </div>
   );
