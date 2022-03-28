@@ -1,0 +1,32 @@
+:root {
+  --size: 5rem;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container div {
+  width: var(--size);
+  height: var(--size);
+  border: 10px solid blue;
+  border-top: 10px solid white;
+  box-shadow: 0 0 20px rgb(58, 58, 129);
+  border-radius: 50%;
+  animation-name: loading;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
