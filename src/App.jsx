@@ -29,7 +29,7 @@ const GET_ALL_COUNTRIES = gql`
 
 export default function App() {
   const result = useQuery(GET_ALL_COUNTRIES);
-  const [searchCountries, setSearchCountries] = useState([]);
+  const [searchCountries, setSearchCountries] = useState(null);
   const [input, setInput] = useState('');
 
   if (result.loading) {
@@ -63,7 +63,11 @@ export default function App() {
         value={input}
         onChange={handleChange}
       />
-      <GroupBy countries={searchCountries} />
+      {searchCountries ? (
+        <GroupBy countries={searchCountries} />
+      ) : (
+        <p>Write something to start!</p>
+      )}
     </div>
   );
 }

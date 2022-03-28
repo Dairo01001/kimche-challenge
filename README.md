@@ -3,6 +3,17 @@
 Nombre postulante: [Dairo Garcia Naranjo]
 Link a la app en producción: [LINK DEL DEPLOY](https://kimche-challenge.vercel.app/)
 
+## Pregunta
+
+"La tabla que contiene la información correspondiente a la asistencia diaria de un niño en un colegio tiene 90 millones de filas. Todas las tablas del sistema existen en la misma BDD en MySQL. La lógica del backend que actualiza la información correspondiente al pasar la asistencia tiene un tiempo de servicio p95 de 10 segundos. El equipo está interesado en bajar este tiempo para mejorar la experiencia del usuario (y porque nos gusta pensar en Kimche como un Ferrari). ¿Qué propondrías para enfrentar el problema? Esta pregunta es abierta, no hay respuestas malas. Puedes proponer arquitectura, tecnologías, diseño, etc."
+
+## Respuesta
+
+Buscar una mejor forma de modelar los DATOS con los requirimientos que ahora tiene o prodria llegar a tener en el futuro.
+
+PDT: Cuando tenga tiempo de consultar e invertigar, propondre algo mejor.
+
+
 ## Instrucciones
 
 Debes crear un buscador de países consultando el [siguiente grafo](https://countries.trevorblades.com/). Este código contiene una base para seguir con la aplicación en React y ApolloClient. Queda a disposición tuya cualquier cambio, ya sea de estructura, estilo, etc.
