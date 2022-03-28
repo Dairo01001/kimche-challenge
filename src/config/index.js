@@ -1,9 +1,5 @@
-import dotenv from 'dotenv';
-
-dotenv.config();
-
 const config = {
-  URI: process.env.REACT_APP_URI,
+  URI: 'https://countries.trevorblades.com',
 };
 
 export default config;
